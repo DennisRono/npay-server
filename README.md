@@ -1,1 +1,1 @@
-# nullchemy server
+# nullchemy pay server
