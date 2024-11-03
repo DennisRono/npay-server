@@ -1,0 +1,448 @@
+{
+  "info": {
+    "_postman_id": "c289128c-d20a-4dae-a69a-bdff616a13c9",
+    "name": "NPay",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "19293538"
+  },
+  "item": [
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "url": "http://127.0.0.1:8000/api/users/",
+            "header": [],
+            "description": "Retrieve a list of all users."
+          },
+          "response": []
+        },
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "url": "http://127.0.0.1:8000/api/users/",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"username\": \"sampleuser\", \"password\": \"samplepass\", \"user_type\": \"PERSONAL\"}"
+            },
+            "description": "Create a new user."
+          },
+          "response": []
+        },
+        {
+          "name": "Get User by ID",
+          "request": {
+            "method": "GET",
+            "url": "http://127.0.0.1:8000/api/users/1/",
+            "header": [],
+            "description": "Retrieve a user by ID."
+          },
+          "response": []
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PUT",
+            "url": "http://127.0.0.1:8000/api/users/1/",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"user_type\": \"BUSINESS\"}"
+            },
+            "description": "Update an existing user."
+          },
+          "response": []
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "url": "http://127.0.0.1:8000/api/users/1/",
+            "header": [],
+            "description": "Delete a user by ID."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Accounts",
+      "item": [
+        {
+          "name": "Get All Accounts",
+          "request": {
+            "method": "GET",
+            "url": "http://127.0.0.1:8000/api/accounts/",
+            "header": [],
+            "description": "Retrieve a list of all accounts."
+          },
+          "response": []
+        },
+        {
+          "name": "Create Account",
+          "request": {
+            "method": "POST",
+            "url": "http://127.0.0.1:8000/api/accounts/",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"user\": 1, \"account_type\": \"SAVINGS\", \"account_number\": \"1234567890\"}"
+            },
+            "description": "Create a new account."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Account by ID",
+          "request": {
+            "method": "GET",
+            "url": "http://127.0.0.1:8000/api/accounts/1/",
+            "header": [],
+            "description": "Retrieve an account by ID."
+          },
+          "response": []
+        },
+        {
+          "name": "Update Account",
+          "request": {
+            "method": "PUT",
+            "url": "http://127.0.0.1:8000/api/accounts/1/",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"balance\": 1500.00}"
+            },
+            "description": "Update an existing account."
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Account",
+          "request": {
+            "method": "DELETE",
+            "url": "http://127.0.0.1:8000/api/accounts/1/",
+            "header": [],
+            "description": "Delete an account by ID."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Transactions",
+      "item": [
+        {
+          "name": "Get All Transactions",
+          "request": {
+            "method": "GET",
+            "url": "http://127.0.0.1:8000/api/transactions/",
+            "header": [],
+            "description": "Retrieve a list of all transactions."
+          },
+          "response": []
+        },
+        {
+          "name": "Create Transaction",
+          "request": {
+            "method": "POST",
+            "url": "http://127.0.0.1:8000/api/transactions/",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"from_account\": 1, \"to_account\": 2, \"amount\": 100.00, \"currency\": \"USD\", \"transaction_type\": \"TRANSFER\"}"
+            },
+            "description": "Create a new transaction."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Transaction by ID",
+          "request": {
+            "method": "GET",
+            "url": "http://127.0.0.1:8000/api/transactions/1/",
+            "header": [],
+            "description": "Retrieve a transaction by ID."
+          },
+          "response": []
+        },
+        {
+          "name": "Update Transaction",
+          "request": {
+            "method": "PUT",
+            "url": "http://127.0.0.1:8000/api/transactions/1/",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"transaction_status\": \"COMPLETED\"}"
+            },
+            "description": "Update an existing transaction."
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Transaction",
+          "request": {
+            "method": "DELETE",
+            "url": "http://127.0.0.1:8000/api/transactions/1/",
+            "header": [],
+            "description": "Delete a transaction by ID."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Reversal Requests",
+      "item": [
+        {
+          "name": "Get All Reversal Requests",
+          "request": {
+            "method": "GET",
+            "url": "http://127.0.0.1:8000/api/reversal-requests/",
+            "header": [],
+            "description": "Retrieve a list of all reversal requests."
+          },
+          "response": []
+        },
+        {
+          "name": "Create Reversal Request",
+          "request": {
+            "method": "POST",
+            "url": "http://127.0.0.1:8000/api/reversal-requests/",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"transaction\": 1, \"requesting_user\": 1}"
+            },
+            "description": "Create a new reversal request."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Reversal Request by ID",
+          "request": {
+            "method": "GET",
+            "url": "http://127.0.0.1:8000/api/reversal-requests/1/",
+            "header": [],
+            "description": "Retrieve a reversal request by ID."
+          },
+          "response": []
+        },
+        {
+          "name": "Update Reversal Request",
+          "request": {
+            "method": "PUT",
+            "url": "http://127.0.0.1:8000/api/reversal-requests/1/",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"reversal_status\": \"APPROVED\"}"
+            },
+            "description": "Update an existing reversal request."
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Reversal Request",
+          "request": {
+            "method": "DELETE",
+            "url": "http://127.0.0.1:8000/api/reversal-requests/1/",
+            "header": [],
+            "description": "Delete a reversal request by ID."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Admins",
+      "item": [
+        {
+          "name": "Get All Admins",
+          "request": {
+            "method": "GET",
+            "url": "http://127.0.0.1:8000/api/admins/",
+            "header": [],
+            "description": "Retrieve a list of all admins."
+          },
+          "response": []
+        },
+        {
+          "name": "Create Admin",
+          "request": {
+            "method": "POST",
+            "url": "http://127.0.0.1:8000/api/admins/",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"username\": \"adminuser\", \"password\": \"adminpass\", \"user_type\": \"BUSINESS\"}"
+            },
+            "description": "Create a new admin."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Admin by ID",
+          "request": {
+            "method": "GET",
+            "url": "http://127.0.0.1:8000/api/admins/1/",
+            "header": [],
+            "description": "Retrieve an admin by ID."
+          },
+          "response": []
+        },
+        {
+          "name": "Update Admin",
+          "request": {
+            "method": "PUT",
+            "url": "http://127.0.0.1:8000/api/admins/1/",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"role\": \"Senior Admin\"}"
+            },
+            "description": "Update an existing admin."
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Admin",
+          "request": {
+            "method": "DELETE",
+            "url": "http://127.0.0.1:8000/api/admins/1/",
+            "header": [],
+            "description": "Delete an admin by ID."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Account Linking",
+      "item": [
+        {
+          "name": "Get All Account Linkings",
+          "request": {
+            "method": "GET",
+            "url": "http://127.0.0.1:8000/api/account-linking/",
+            "header": [],
+            "description": "Retrieve a list of all account linkings."
+          },
+          "response": []
+        },
+        {
+          "name": "Create Account Linking",
+          "request": {
+            "method": "POST",
+            "url": "http://127.0.0.1:8000/api/account-linking/",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"business_user\": 1, \"personal_user\": 2}"
+            },
+            "description": "Create a new account linking."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Account Linking by ID",
+          "request": {
+            "method": "GET",
+            "url": "http://127.0.0.1:8000/api/account-linking/1/",
+            "header": [],
+            "description": "Retrieve an account linking by ID."
+          },
+          "response": []
+        },
+        {
+          "name": "Update Account Linking",
+          "request": {
+            "method": "PUT",
+            "url": "http://127.0.0.1:8000/api/account-linking/1/",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"link_status\": \"INACTIVE\"}"
+            },
+            "description": "Update an existing account linking."
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Account Linking",
+          "request": {
+            "method": "DELETE",
+            "url": "http://127.0.0.1:8000/api/account-linking/1/",
+            "header": [],
+            "description": "Delete an account linking by ID."
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
